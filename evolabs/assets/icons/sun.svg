@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="sun" transform="translate(-161 53)">
+    <g id="sun-outline" transform="translate(161 -53)">
+      <g id="sun-2" data-name="sun">
+        <rect id="Rectangle_32" data-name="Rectangle 32" width="60" height="60" transform="translate(60 60) rotate(180)" fill="#797979" opacity="0"/>
+        <path id="Path_107" data-name="Path 107" d="M13.5,12A2.5,2.5,0,0,0,16,9.5v-5a2.5,2.5,0,1,0-5,0v5A2.5,2.5,0,0,0,13.5,12Z" transform="translate(16.5 3)" fill="#797979"/>
+        <path id="Path_108" data-name="Path 108" d="M25.5,11h-5a2.5,2.5,0,0,0,0,5h5a2.5,2.5,0,0,0,0-5Z" transform="translate(27 16.5)" fill="#797979"/>
+        <path id="Path_109" data-name="Path 109" d="M12,13.5A2.5,2.5,0,0,0,9.5,11h-5a2.5,2.5,0,0,0,0,5h5A2.5,2.5,0,0,0,12,13.5Z" transform="translate(3 16.5)" fill="#797979"/>
+        <path id="Path_110" data-name="Path 110" d="M8.78,5.415A2.529,2.529,0,0,0,5.3,9.09l3.6,3.475a2.6,2.6,0,0,0,3.625-.075,2.5,2.5,0,0,0,0-3.525Z" transform="translate(6.77 7.085)" fill="#797979"/>
+        <path id="Path_111" data-name="Path 111" d="M18.426,13.182a2.5,2.5,0,0,0,1.725-.7l3.6-3.475a2.5,2.5,0,0,0-3.375-3.675l-3.6,3.55a2.544,2.544,0,0,0,1.65,4.3Z" transform="translate(24.074 7.168)" fill="#797979"/>
+        <path id="Path_112" data-name="Path 112" d="M13.5,18A2.5,2.5,0,0,0,11,20.5v5a2.5,2.5,0,0,0,5,0v-5A2.5,2.5,0,0,0,13.5,18Z" transform="translate(16.5 27)" fill="#797979"/>
+        <path id="Path_113" data-name="Path 113" d="M20.274,16.561a2.5,2.5,0,0,0-3.475,3.6l3.6,3.55a2.519,2.519,0,0,0,3.525-3.6Z" transform="translate(24.051 23.789)" fill="#797979"/>
+        <path id="Path_114" data-name="Path 114" d="M8.874,16.516l-3.6,3.475a2.531,2.531,0,0,0,3.475,3.675l3.6-3.475a2.5,2.5,0,0,0-3.475-3.6Z" transform="translate(6.801 23.834)" fill="#797979"/>
+        <path id="Path_115" data-name="Path 115" d="M18,8A10,10,0,1,0,28,18,10,10,0,0,0,18,8Zm0,15a5,5,0,1,1,5-5A5,5,0,0,1,18,23Z" transform="translate(12 12)" fill="#797979"/>
+      </g>
+    </g>
+  </g>
+</svg>
