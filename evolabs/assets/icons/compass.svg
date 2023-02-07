@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="compass" transform="translate(30 30)">
+    <g id="compass-outline" transform="translate(-30 -30)">
+      <g id="compass-2" data-name="compass" transform="translate(0 0)">
+        <rect id="Rectangle_26" data-name="Rectangle 26" width="60" height="60" fill="#797979" opacity="0"/>
+        <path id="Path_90" data-name="Path 90" d="M26.889,2A24.889,24.889,0,1,0,51.778,26.889,24.889,24.889,0,0,0,26.889,2Zm0,44.8A19.911,19.911,0,1,1,46.8,26.889,19.911,19.911,0,0,1,26.889,46.8Z" transform="translate(2.978 3.244)" fill="#797979"/>
+        <path id="Path_91" data-name="Path 91" d="M27.1,8.8a2.489,2.489,0,0,0-2.738-.622L13.887,12.405a2.489,2.489,0,0,0-1.369,1.369l-4.356,10.6a2.489,2.489,0,0,0,.448,2.489h.124a2.489,2.489,0,0,0,1.742,1.045,2.489,2.489,0,0,0,.946-.174L21.9,23.506a2.489,2.489,0,0,0,1.369-1.369l4.356-10.6A2.489,2.489,0,0,0,27.1,8.8ZM14.957,20.967l1.767-4.331,4.206-1.692-1.767,4.331Z" transform="translate(11.923 12.178)" fill="#797979"/>
+      </g>
+    </g>
+  </g>
+</svg>

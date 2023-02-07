@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="thermometer" transform="translate(-239 -84.24)">
+    <g id="thermometer-outline" transform="translate(239 84)">
+      <g id="thermometer-2" data-name="thermometer">
+        <rect id="Rectangle_34" data-name="Rectangle 34" width="60" height="60" transform="translate(0 0.24)" fill="#797979" opacity="0"/>
+        <path id="Path_125" data-name="Path 125" d="M19.55,52.2a12.55,12.55,0,0,1-7.53-22.59V9.53a7.53,7.53,0,0,1,15.06,0V29.61A12.55,12.55,0,0,1,19.55,52.2Zm0-45.18a2.51,2.51,0,0,0-2.51,2.51V30.965a2.51,2.51,0,0,1-1.255,2.184,7.53,7.53,0,1,0,7.53,0,2.51,2.51,0,0,1-1.255-2.184V9.53A2.334,2.334,0,0,0,21.333,7.8,2.51,2.51,0,0,0,19.55,7.02Z" transform="translate(10.57 3.02)" fill="#797979"/>
+      </g>
+    </g>
+  </g>
+</svg>

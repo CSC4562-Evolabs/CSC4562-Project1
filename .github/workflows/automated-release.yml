@@ -33,22 +33,22 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: '12.x'
-    - uses: subosito/flutter-action@v2
+    - uses: subosito/flutter-action@v2.8.0
       with:
-        flutter-version: '3.3.1'
-    - run: flutter pub get
-    - run: flutter build apk --release --split-per-abi
-    - run: flutter build appbundle
+        flutter-version: '3.7.1'
+    - run: cd evolabs; flutter pub get
+    - run: cd evolabs; flutter build apk --release --split-per-abi
+    - run: cd evolabs; flutter build appbundle
     - name: Upload apks
       uses: actions/upload-artifact@v2
       with:
         name: android-apk
-        path: build/app/outputs/apk/release/*.apk
+        path: evolabs/build/app/outputs/apk/release/*.apk
     - name: Upload app-release.aab
       uses: actions/upload-artifact@v2
       with:
         name: android-aab
-        path: build/app/outputs/bundle/release/app-release.aab
+        path: evolabs/build/app/outputs/bundle/release/app-release.aab
 
   create-release:
     name: Create Release
