@@ -55,10 +55,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [generate-version, build-android]
     steps:
-    - name: Get linux-release.tar.gz
-      uses: actions/download-artifact@v2
-      with:
-        name: linux-release
     - name: Get apks
       uses: actions/download-artifact@v2
       with:
