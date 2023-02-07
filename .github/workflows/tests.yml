@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@v2.8.0
       - run: cd evolabs; flutter test
   build-android-test:
     name: Test Building for Android
@@ -18,7 +18,7 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: '12.x'
-    - uses: subosito/flutter-action@v2
+    - uses: subosito/flutter-action@v2.8.0
       with:
         flutter-version: '3.7.1'
     - run: cd evolabs; flutter pub get
