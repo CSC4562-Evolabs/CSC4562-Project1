@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: subosito/flutter-action@v2
+      - run: cd evolabs
       - run: flutter test
   build-android-test:
     name: Test Building for Android
@@ -21,6 +22,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         flutter-version: '3.3.1'
+    - run: cd evolabs
     - run: flutter pub get
     - run: flutter build apk --release --split-per-abi
     - run: flutter build appbundle
