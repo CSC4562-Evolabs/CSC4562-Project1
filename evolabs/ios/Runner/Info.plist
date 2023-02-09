@@ -47,5 +47,8 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSMotionUsageDescription</key>
+	<string>EvoLabs needs to access the motion sensors on your device to be able 
+			to display the Accelerometer & Gyroscope data.</string>
 </dict>
 </plist>
