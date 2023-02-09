@@ -32,8 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _buildScreens() {
     return [
       const Dashboard(),
-      Analyze(),
-      Settings(),
+      const Analyze(),
+      const Settings(),
     ];
   }
 
