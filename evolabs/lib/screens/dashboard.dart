@@ -21,16 +21,19 @@ class _DashboardState extends State<Dashboard> {
         elevation: 0,
         toolbarHeight: 120,
         backgroundColor: backgroundColor2,
-        title: const Padding(
-          padding: EdgeInsets.only(
-            top: 78.0,
-            bottom: 15,
-          ),
-          child: Text(
-            "Welcome",
-            style: TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.w600,
+        title: const Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 78.0,
+              bottom: 15,
+            ),
+            child: Text(
+              "Welcome",
+              style: TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),
@@ -94,7 +97,7 @@ class _DashboardState extends State<Dashboard> {
                               "Accelerometer",
                               style: TextStyle(
                                   color: primaryColor,
-                                  fontSize: 18,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.w400),
                             ),
                             Padding(

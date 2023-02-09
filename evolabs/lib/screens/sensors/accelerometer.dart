@@ -119,10 +119,10 @@ class _AccelerometerState extends State<Accelerometer> {
                         child: const Text(
                           "Stop",
                           style: TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2.5,
-                          ),
+                              fontSize: 36,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1.5,
+                              color: Colors.black),
                         ),
                       ),
                     ),
