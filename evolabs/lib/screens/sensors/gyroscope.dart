@@ -97,7 +97,7 @@ class _GyroscopeState extends State<Gyroscope> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15, right: 15),
+                    padding: const EdgeInsets.only(right: 20),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: SizedBox(
@@ -133,34 +133,31 @@ class _GyroscopeState extends State<Gyroscope> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15, right: 15),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: SizedBox(
-                        width: 150,
-                        height: 55,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: backgroundColor,
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => GyroscopeChart(
-                                    gyroscopeData: _gyroscopeData),
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            "Stop",
-                            style: TextStyle(
-                                fontSize: 36,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 1.5,
-                                color: primaryColor),
-                          ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: SizedBox(
+                      width: 150,
+                      height: 55,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: backgroundColor,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  GyroscopeChart(gyroscopeData: _gyroscopeData),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          "Stop",
+                          style: TextStyle(
+                              fontSize: 36,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1.5,
+                              color: primaryColor),
                         ),
                       ),
                     ),
