@@ -99,38 +99,78 @@ class _AccelerometerState extends State<Accelerometer> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: SizedBox(
-                      width: 150,
-                      height: 55,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: highlightColor4,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => AccelerometerChart(
-                                  accelerometerData: _accelerometerData),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          "Stop",
-                          style: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 1.5,
-                              color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: SizedBox(
+                        width: 150,
+                        height: 55,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: highlightColor4,
+                          ),
+                          onPressed: () {
+                            _streamSubscriptions.add(
+                              accelerometerEvents.listen(
+                                (AccelerometerEvent event) {
+                                  _accelerometerData.add(
+                                    AccelerometerData(
+                                      DateTime.now(),
+                                      <double>[event.x, event.y, event.z],
+                                    ),
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            "Start",
+                            style: TextStyle(
+                                fontSize: 36,
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 1.5,
+                                color: Colors.black),
+                          ),
                         ),
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: SizedBox(
+                        width: 150,
+                        height: 55,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: backgroundColor,
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AccelerometerChart(
+                                    accelerometerData: _accelerometerData),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            "Stop",
+                            style: TextStyle(
+                                fontSize: 36,
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 1.5,
+                                color: primaryColor),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
