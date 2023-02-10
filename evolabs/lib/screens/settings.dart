@@ -1,4 +1,5 @@
 import 'package:evolabs/utils/colors.dart';
+import 'package:evolabs/utils/permissions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
@@ -21,16 +22,19 @@ class _SettingsState extends State<Settings> {
         elevation: 0,
         toolbarHeight: 120,
         backgroundColor: backgroundColor2,
-        title: const Padding(
-          padding: EdgeInsets.only(
-            top: 78.0,
-            bottom: 15,
-          ),
-          child: Text(
-            "Settings",
-            style: TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.w600,
+        title: const Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 78.0,
+              bottom: 15,
+            ),
+            child: Text(
+              "Settings",
+              style: TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),
@@ -41,7 +45,7 @@ class _SettingsState extends State<Settings> {
           children: [
             // DARK MODE SETTING
             Padding(
-              padding: const EdgeInsets.only(top: 7.5, bottom: 7.5),
+              padding: const EdgeInsets.only(top: 11.5, bottom: 11.5),
               child: Row(
                 children: [
                   const Icon(
@@ -74,7 +78,7 @@ class _SettingsState extends State<Settings> {
             ),
             // NOTIFICATIONS SETTING
             Padding(
-              padding: const EdgeInsets.only(top: 7.5, bottom: 7.5),
+              padding: const EdgeInsets.only(top: 11.5, bottom: 11.5),
               child: Row(
                 children: [
                   const Icon(
@@ -107,7 +111,7 @@ class _SettingsState extends State<Settings> {
             ),
             // PERMISSIONS SETTING
             Padding(
-              padding: const EdgeInsets.only(top: 7.5, bottom: 7.5),
+              padding: const EdgeInsets.only(top: 11.5, bottom: 11.5),
               child: Row(
                 children: [
                   const Icon(
@@ -127,7 +131,16 @@ class _SettingsState extends State<Settings> {
                   ),
                   const Spacer(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const Permissions();
+                          },
+                        ),
+                      );
+                    },
                     icon: const Icon(
                       Icons.arrow_forward_ios,
                       color: highlightColor2,
@@ -139,7 +152,7 @@ class _SettingsState extends State<Settings> {
             ),
             // TEXT SIZE SETTING
             Padding(
-              padding: const EdgeInsets.only(top: 7.5),
+              padding: const EdgeInsets.only(top: 11.5),
               child: Row(
                 children: [
                   const Icon(

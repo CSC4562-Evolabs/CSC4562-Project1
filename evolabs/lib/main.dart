@@ -3,7 +3,9 @@ import 'package:evolabs/screens/dashboard.dart';
 import 'package:evolabs/screens/settings.dart';
 import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +17,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
-      home: MyHomePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark(),
+        home: FlutterSplashScreen.fadeIn(
+          backgroundImage: Image.asset(
+            'assets/images/splash-screen-background.jpg',
+          ),
+          childWidget: Padding(
+            padding: const EdgeInsets.only(top: 85, right: 20),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: SizedBox(
+                height: 270,
+                width: 270,
+                child: SvgPicture.asset(
+                  'assets/images/name-logo.svg',
+                ),
+              ),
+            ),
+          ),
+          defaultNextScreen: MyHomePage(),
+        ));
   }
 }
 
@@ -32,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _buildScreens() {
     return [
       const Dashboard(),
-      Analyze(),
-      Settings(),
+      const Analyze(),
+      const Settings(),
     ];
   }
 

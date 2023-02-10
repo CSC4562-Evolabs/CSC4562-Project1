@@ -1,6 +1,9 @@
+import 'package:evolabs/screens/sensors/barometer.dart';
+import 'package:evolabs/screens/sensors/gyroscope.dart';
 import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:evolabs/screens/sensors/accelerometer.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -18,16 +21,19 @@ class _DashboardState extends State<Dashboard> {
         elevation: 0,
         toolbarHeight: 120,
         backgroundColor: backgroundColor2,
-        title: const Padding(
-          padding: EdgeInsets.only(
-            top: 78.0,
-            bottom: 15,
-          ),
-          child: Text(
-            "Welcome",
-            style: TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.w600,
+        title: const Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 78.0,
+              bottom: 15,
+            ),
+            child: Text(
+              "Welcome",
+              style: TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),
@@ -66,7 +72,14 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       // ACCELEROMETER TILE
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Accelerometer();
+                            }));
+                          });
+                        },
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(backgroundColor),
@@ -84,7 +97,7 @@ class _DashboardState extends State<Dashboard> {
                               "Accelerometer",
                               style: TextStyle(
                                   color: primaryColor,
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w400),
                             ),
                             Padding(
@@ -100,7 +113,20 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       // BAROMETER TILE
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(
+                            () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const Barometer();
+                                  },
+                                ),
+                              );
+                            },
+                          );
+                        },
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(backgroundColor),
@@ -202,7 +228,20 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       // GYROSCOPE TILE
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(
+                            () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const Gyroscope();
+                                  },
+                                ),
+                              );
+                            },
+                          );
+                        },
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(backgroundColor),

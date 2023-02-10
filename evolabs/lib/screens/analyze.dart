@@ -17,16 +17,19 @@ class _AnalyzeState extends State<Analyze> {
         elevation: 0,
         toolbarHeight: 120,
         backgroundColor: backgroundColor2,
-        title: const Padding(
-          padding: EdgeInsets.only(
-            top: 78.0,
-            bottom: 15,
-          ),
-          child: Text(
-            "Analysis",
-            style: TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.w600,
+        title: const Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 78.0,
+              bottom: 15,
+            ),
+            child: Text(
+              "Analysis",
+              style: TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),

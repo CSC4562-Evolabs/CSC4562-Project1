@@ -47,5 +47,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSMotionUsageDescription</key>
+	<string>EvoLabs needs to access the motion sensors on your device to be able to display the Accelerometer and Gyroscope data.</string>
+	<key>NSLocationWhenInUsageDescription</key>
+	<string>EvoLabs needs to access your location to be able to display GPS data.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>EvoLabs needs to access your microphone to be able to detect vibrations.</string>
 </dict>
 </plist>
