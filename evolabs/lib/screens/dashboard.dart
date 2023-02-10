@@ -3,7 +3,6 @@ import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:evolabs/screens/sensors/accelerometer.dart';
-import '';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -97,7 +96,7 @@ class _DashboardState extends State<Dashboard> {
                               "Accelerometer",
                               style: TextStyle(
                                   color: primaryColor,
-                                  fontSize: 17,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w400),
                             ),
                             Padding(
