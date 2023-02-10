@@ -5,7 +5,6 @@ import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:sensors_plus/sensors_plus.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class Accelerometer extends StatefulWidget {
   const Accelerometer({Key? key}) : super(key: key);
@@ -17,7 +16,7 @@ class Accelerometer extends StatefulWidget {
 class _AccelerometerState extends State<Accelerometer> {
   List<double>? _userAccelerometerValues;
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
-  List<AccelerometerData> _accelerometerData = [];
+  final List<AccelerometerData> _accelerometerData = [];
 
   @override
   Widget build(BuildContext context) {

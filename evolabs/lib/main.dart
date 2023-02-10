@@ -36,12 +36,14 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          defaultNextScreen: MyHomePage(),
+          defaultNextScreen: const MyHomePage(),
         ));
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
