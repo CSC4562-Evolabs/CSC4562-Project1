@@ -72,8 +72,16 @@ class _PermissionsState extends State<Permissions> {
               if (microphoneStatus == PermissionStatus.denied) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text(
-                        "EvoLabs needs to access your microphone to detect vibrations."),
+                    content: Padding(
+                      padding: EdgeInsets.only(bottom: 75),
+                      child: Text(
+                        "EvoLabs needs to access your microphone to detect vibrations.",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
                   ),
                 );
               }
@@ -100,8 +108,16 @@ class _PermissionsState extends State<Permissions> {
               if (sensorStatus == PermissionStatus.denied) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text(
-                        "EvoLabs needs to access your microphone to detect vibrations."),
+                    content: Padding(
+                      padding: EdgeInsets.only(bottom: 75),
+                      child: Text(
+                        "EvoLabs needs to access the motion sensors on your device to be able to display the Accelerometer and Gyroscope data.",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
                   ),
                 );
               }
@@ -128,8 +144,15 @@ class _PermissionsState extends State<Permissions> {
               if (locationStatus == PermissionStatus.denied) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text(
-                      "EvoLabs needs to access your Locations Services to access GPS data.",
+                    content: Padding(
+                      padding: EdgeInsets.only(bottom: 75),
+                      child: Text(
+                        "EvoLabs needs to access your Locations Services to access GPS data.",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 );

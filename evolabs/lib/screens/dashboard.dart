@@ -1,4 +1,5 @@
 import 'package:evolabs/screens/sensors/barometer.dart';
+import 'package:evolabs/screens/sensors/gyroscope.dart';
 import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -113,12 +114,18 @@ class _DashboardState extends State<Dashboard> {
                       // BAROMETER TILE
                       OutlinedButton(
                         onPressed: () {
-                          setState(() {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return const Barometer();
-                            }));
-                          });
+                          setState(
+                            () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const Barometer();
+                                  },
+                                ),
+                              );
+                            },
+                          );
                         },
                         style: ButtonStyle(
                           backgroundColor:
@@ -221,7 +228,20 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       // GYROSCOPE TILE
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(
+                            () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const Gyroscope();
+                                  },
+                                ),
+                              );
+                            },
+                          );
+                        },
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(backgroundColor),
