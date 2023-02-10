@@ -2,6 +2,7 @@ import 'package:evolabs/utils/colors.dart';
 import 'package:evolabs/utils/permissions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:cupertino_icons/cupertino_icons.dart';
 
 class Settings extends StatefulWidget {

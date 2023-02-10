@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 class GyroscopeData {
   final DateTime date;
   final List<double> value;
