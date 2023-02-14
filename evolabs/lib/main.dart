@@ -17,27 +17,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark(),
-        home: FlutterSplashScreen.fadeIn(
-          backgroundImage: Image.asset(
-            'assets/images/splash-screen-background.jpg',
-          ),
-          childWidget: Padding(
-            padding: const EdgeInsets.only(top: 85, right: 20),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: SizedBox(
-                height: 270,
-                width: 270,
-                child: SvgPicture.asset(
-                  'assets/images/name-logo.svg',
-                ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: FlutterSplashScreen.fadeIn(
+        backgroundImage: Image.asset(
+          'assets/images/splash-screen-background.jpg',
+        ),
+        childWidget: Padding(
+          padding: const EdgeInsets.only(top: 85, right: 20),
+          child: Align(
+            alignment: Alignment.topRight,
+            child: SizedBox(
+              height: 270,
+              width: 270,
+              child: SvgPicture.asset(
+                'assets/images/name-logo.svg',
               ),
             ),
           ),
-          defaultNextScreen: const MyHomePage(),
-        ));
+        ),
+        defaultNextScreen: const MyHomePage(),
+      ),
+    );
   }
 }
 
@@ -107,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
       items: _navBarItems(),
       screenTransitionAnimation: const ScreenTransitionAnimation(
         animateTabTransition: true,
-        curve: Curves.easeIn,
+        curve: Curves.easeInOutCubicEmphasized,
         duration: Duration(milliseconds: 200),
       ),
       decoration: const NavBarDecoration(
