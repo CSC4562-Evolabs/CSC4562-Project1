@@ -344,7 +344,7 @@ class _DashboardState extends State<Dashboard> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 15.0),
+                                  padding: EdgeInsets.only(bottom: 15.0),
                                   child: Icon(
                                     Icons.keyboard_alt_outlined,
                                     size: 75,
@@ -442,10 +442,6 @@ class _DashboardState extends State<Dashboard> {
                               ),
                               side: MaterialStateProperty.all(BorderSide.none),
                             ),
-<<<<<<< Updated upstream
-                          ],
-                        ),
-=======
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: const [
@@ -502,7 +498,6 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ),
                         ],
->>>>>>> Stashed changes
                       ),
                       // DUAL RECORDER
                       OutlinedButton(

@@ -2,6 +2,7 @@ import 'package:evolabs/data/accelerometerData.dart';
 import 'package:evolabs/charts/accel_gyro_chart.dart';
 import 'package:evolabs/data/gyroscopeData.dart';
 import 'package:evolabs/screens/analyze.dart';
+// ignore: unused_import
 import 'package:evolabs/screens/dashboard.dart';
 import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';

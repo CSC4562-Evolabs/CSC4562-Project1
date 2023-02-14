@@ -1,9 +1,12 @@
+// ignore: unused_import
 import 'package:evolabs/charts/accelerometerChart.dart';
+// ignore: unused_import
 import 'package:evolabs/data/accelerometerData.dart';
 import 'package:evolabs/screens/dashboard.dart';
 import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+// ignore: unused_import
 import 'package:sensors_plus/sensors_plus.dart';
 
 class Keyboard extends StatefulWidget {
@@ -15,11 +18,12 @@ class Keyboard extends StatefulWidget {
 
 class _KeyboardState extends State<Keyboard> {
   List<double>? _userAccelerometerValues;
+  // ignore: unused_field
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
-  final List<AccelerometerData> _accelerometerData = [];
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final userAccelerometer = _userAccelerometerValues
         ?.map((double v) => v.toStringAsFixed(1))
         .toList();
