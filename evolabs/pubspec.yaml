@@ -42,3 +42,11 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+<<<<<<< Updated upstream
+=======
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: 'assets/images/EvoLabs-logo.png'
+>>>>>>> Stashed changes
