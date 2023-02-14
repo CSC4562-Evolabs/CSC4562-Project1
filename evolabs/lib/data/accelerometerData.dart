@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 class AccelerometerData {
   final DateTime date;
   final List<double> value;

@@ -16,7 +16,7 @@ class Gyroscope extends StatefulWidget {
 class _GyroscopeState extends State<Gyroscope> {
   List<double>? _gyroscopeValues;
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
-  List<GyroscopeData> _gyroscopeData = [];
+  final List<GyroscopeData> _gyroscopeData = [];
 
   @override
   Widget build(BuildContext context) {

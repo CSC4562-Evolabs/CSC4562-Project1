@@ -1,21 +1,22 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:evolabs/utils/colors.dart';
+import 'package:evolabs/data/accelerometerData.dart';
 import 'package:evolabs/data/gyroscopeData.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:evolabs/screens/sensors/gyroscope.dart';
+import 'package:evolabs/screens/sensors/accelerometer.dart';
 
-class GyroscopeChart extends StatefulWidget {
-  const GyroscopeChart({Key? key, required this.gyroscopeData})
+class AccelGyroChart extends StatefulWidget {
+  const AccelGyroChart(
+      {Key? key, required this.accelerometerData, required this.gyroscopeData})
       : super(key: key);
+  final List<AccelerometerData> accelerometerData;
   final List<GyroscopeData> gyroscopeData;
 
   @override
-  State<GyroscopeChart> createState() => _GyroscopeChartState();
+  State<AccelGyroChart> createState() => _AccelGyroChartState();
 }
 
-class _GyroscopeChartState extends State<GyroscopeChart> {
+class _AccelGyroChartState extends State<AccelGyroChart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +40,7 @@ class _GyroscopeChartState extends State<GyroscopeChart> {
               onPressed: () {
                 setState(() {
                   Navigator.pop(context, MaterialPageRoute(builder: (context) {
-                    return const Gyroscope();
+                    return const Accelerometer();
                   }));
                 });
               },
@@ -58,6 +59,72 @@ class _GyroscopeChartState extends State<GyroscopeChart> {
         padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
         child: Column(
           children: [
+            SfCartesianChart(
+              primaryXAxis: CategoryAxis(),
+              title: ChartTitle(
+                text: 'Accelerometer',
+                textStyle: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w400,
+                  color: primaryColor,
+                ),
+              ),
+              legend: Legend(
+                isVisible: true,
+                position: LegendPosition.bottom,
+              ),
+              enableAxisAnimation: true,
+              series: <ChartSeries<AccelerometerData, DateTime>>[
+                LineSeries<AccelerometerData, DateTime>(
+                  dataSource: widget.accelerometerData,
+                  xValueMapper: (AccelerometerData value, _) => value.getDate,
+                  yValueMapper: (AccelerometerData value, _) =>
+                      value.getValue[0],
+                  name: 'X',
+                  color: highlightColor2,
+                  markerSettings: const MarkerSettings(
+                    isVisible: true,
+                    height: 4,
+                    width: 4,
+                    shape: DataMarkerType.circle,
+                    borderWidth: 3,
+                    borderColor: highlightColor2,
+                  ),
+                ),
+                LineSeries<AccelerometerData, DateTime>(
+                  dataSource: widget.accelerometerData,
+                  xValueMapper: (AccelerometerData value, _) => value.getDate,
+                  yValueMapper: (AccelerometerData value, _) =>
+                      value.getValue[1],
+                  name: 'Y',
+                  color: highlightColor1,
+                  markerSettings: const MarkerSettings(
+                    isVisible: true,
+                    height: 4,
+                    width: 4,
+                    shape: DataMarkerType.circle,
+                    borderWidth: 3,
+                    borderColor: highlightColor1,
+                  ),
+                ),
+                LineSeries<AccelerometerData, DateTime>(
+                  dataSource: widget.accelerometerData,
+                  xValueMapper: (AccelerometerData value, _) => value.getDate,
+                  yValueMapper: (AccelerometerData value, _) =>
+                      value.getValue[2],
+                  name: 'Z',
+                  color: primaryColor,
+                  markerSettings: const MarkerSettings(
+                    isVisible: true,
+                    height: 4,
+                    width: 4,
+                    shape: DataMarkerType.circle,
+                    borderWidth: 3,
+                    borderColor: secondaryColor,
+                  ),
+                ),
+              ],
+            ),
             SfCartesianChart(
               primaryXAxis: CategoryAxis(),
               title: ChartTitle(

@@ -2,11 +2,9 @@ import 'package:evolabs/utils/colors.dart';
 import 'package:evolabs/utils/permissions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
+// ignore: unused_import
 import 'package:cupertino_icons/cupertino_icons.dart';
-=======
 import 'package:flutter_svg/flutter_svg.dart';
->>>>>>> Stashed changes
 
 class Settings extends StatefulWidget {
   const Settings({super.key});

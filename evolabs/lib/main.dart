@@ -35,19 +35,16 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-<<<<<<< Updated upstream
-          defaultNextScreen: MyHomePage(),
-        ));
-=======
         ),
         defaultNextScreen: const MyHomePage(),
       ),
     );
->>>>>>> Stashed changes
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
