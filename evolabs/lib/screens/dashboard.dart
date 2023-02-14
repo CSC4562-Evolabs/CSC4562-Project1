@@ -497,48 +497,48 @@ class _DashboardState extends State<Dashboard> {
                               ],
                             ),
                           ),
-                        ],
-                      ),
-                      // DUAL RECORDER
-                      OutlinedButton(
-                        onPressed: () {
-                          setState(() {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return const AccelGyro();
-                            }));
-                          });
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(backgroundColor),
-                          shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
+                          // DUAL RECORDER
+                          OutlinedButton(
+                            onPressed: () {
+                              setState(() {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const AccelGyro();
+                                }));
+                              });
+                            },
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(backgroundColor),
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              side: MaterialStateProperty.all(BorderSide.none),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                const Text(
+                                  "Accel/Gyro",
+                                  style: TextStyle(
+                                      color: primaryColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15.0),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/gyroscope.svg',
+                                    height: 75,
+                                    width: 75,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          side: MaterialStateProperty.all(BorderSide.none),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            const Text(
-                              "Accel/Gyro",
-                              style: TextStyle(
-                                  color: primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15.0),
-                              child: SvgPicture.asset(
-                                'assets/icons/gyroscope.svg',
-                                height: 75,
-                                width: 75,
-                              ),
-                            ),
-                          ],
-                        ),
+                        ],
                       ),
                     ],
                   ),
