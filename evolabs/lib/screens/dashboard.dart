@@ -2,6 +2,7 @@ import 'package:evolabs/screens/sensors/accel_gyro.dart';
 import 'package:evolabs/screens/sensors/barometer.dart';
 import 'package:evolabs/screens/sensors/gyroscope.dart';
 import 'package:evolabs/screens/sensors/keyboard.dart';
+import 'package:evolabs/screens/sensors/microphone.dart';
 import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -312,7 +313,7 @@ class _DashboardState extends State<Dashboard> {
                               ],
                             ),
                           ),
-                          // MOTION SENSORS
+                          // KEYBOARD SENSOR
                           OutlinedButton(
                             onPressed: () {
                               setState(() {
@@ -442,10 +443,6 @@ class _DashboardState extends State<Dashboard> {
                               ),
                               side: MaterialStateProperty.all(BorderSide.none),
                             ),
-<<<<<<< Updated upstream
-                          ],
-                        ),
-=======
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: const [
@@ -460,6 +457,47 @@ class _DashboardState extends State<Dashboard> {
                                   padding: EdgeInsets.only(bottom: 15.0),
                                   child: Icon(
                                     Icons.sensors_sharp,
+                                    size: 75,
+                                    color: Color.fromARGB(255, 118, 118, 118),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          // MICROPHONE
+                          OutlinedButton(
+                            onPressed: () {
+                              setState(() {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const Microphone();
+                                }));
+                              });
+                            },
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(backgroundColor),
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              side: MaterialStateProperty.all(BorderSide.none),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: const [
+                                Text(
+                                  "Microphone",
+                                  style: TextStyle(
+                                      color: primaryColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 15.0),
+                                  child: Icon(
+                                    Icons.mic_outlined,
                                     size: 75,
                                     color: Color.fromARGB(255, 118, 118, 118),
                                   ),
@@ -502,48 +540,6 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ),
                         ],
->>>>>>> Stashed changes
-                      ),
-                      // DUAL RECORDER
-                      OutlinedButton(
-                        onPressed: () {
-                          setState(() {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return const AccelGyro();
-                            }));
-                          });
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(backgroundColor),
-                          shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                          side: MaterialStateProperty.all(BorderSide.none),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            const Text(
-                              "Accel/Gyro",
-                              style: TextStyle(
-                                  color: primaryColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15.0),
-                              child: SvgPicture.asset(
-                                'assets/icons/gyroscope.svg',
-                                height: 75,
-                                width: 75,
-                              ),
-                            ),
-                          ],
-                        ),
                       ),
                     ],
                   ),
