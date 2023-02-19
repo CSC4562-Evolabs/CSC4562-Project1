@@ -21,6 +21,8 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
   final List<AccelerometerData> _accelerometerData = [];
   final List<GyroscopeData> _gyroscopeData = [];
+  String mostRecentKeypress = "none";
+  int previousTextBufferSize = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -125,14 +127,23 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 45),
+            Padding(
+              padding: const EdgeInsets.only(top: 45),
               child: TextField(
                 cursorColor: highlightColor2,
                 textCapitalization: TextCapitalization.none,
                 keyboardType: TextInputType.number,
                 maxLines: 1,
-                decoration: InputDecoration(
+                onChanged: (value) {
+                  if (value.length > previousTextBufferSize) {
+                    mostRecentKeypress = value
+                        .substring((value.length - 1).clamp(0, value.length));
+                  } else {
+                    mostRecentKeypress = "backspace";
+                  }
+                  previousTextBufferSize = value.length;
+                },
+                decoration: const InputDecoration(
                   labelText: 'Start typing numbers here.',
                   labelStyle: TextStyle(
                     fontWeight: FontWeight.w700,
@@ -164,9 +175,10 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
                             backgroundColor: highlightColor4,
                           ),
                           onPressed: () async {
-                            Future<String> filePath = file_io.getFilePath();
+                            Future<String> filePath =
+                                file_io.getFilePath("training");
                             if (await filePath != "ERROR") {
-                              file_io.writeHeader(await filePath);
+                              file_io.writeHeader(await filePath, "training");
                             } else {
                               // ignore: avoid_print
                               print("ERROR: Invalid File");
@@ -192,11 +204,13 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
                                       <double>[event.x, event.y, event.z],
                                     ),
                                   );
-                                  file_io.writeDataLine(
+                                  file_io.writeTrainingDataLine(
+                                      mostRecentKeypress,
                                       await filePath,
                                       DateTime.now(),
                                       _gyroscopeValues,
                                       _userAccelerometerValues);
+                                  mostRecentKeypress = "none";
                                 },
                               ),
                             );

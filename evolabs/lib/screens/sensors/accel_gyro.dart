@@ -142,9 +142,10 @@ class _AccelGyroState extends State<AccelGyro> {
                             backgroundColor: highlightColor4,
                           ),
                           onPressed: () async {
-                            Future<String> filePath = file_io.getFilePath();
+                            Future<String> filePath =
+                                file_io.getFilePath("training");
                             if (await filePath != "ERROR") {
-                              file_io.writeHeader(await filePath);
+                              file_io.writeHeader(await filePath, "training");
                             } else {
                               // ignore: avoid_print
                               print("ERROR: Invalid File");
@@ -170,7 +171,8 @@ class _AccelGyroState extends State<AccelGyro> {
                                       <double>[event.x, event.y, event.z],
                                     ),
                                   );
-                                  file_io.writeDataLine(
+                                  file_io.writeTrainingDataLine(
+                                      "none",
                                       await filePath,
                                       DateTime.now(),
                                       _gyroscopeValues,

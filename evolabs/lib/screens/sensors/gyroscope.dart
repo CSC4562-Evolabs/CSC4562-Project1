@@ -5,6 +5,7 @@ import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:sensors_plus/sensors_plus.dart';
+import 'package:evolabs/utils/file_io.dart' as file_io;
 
 class Gyroscope extends StatefulWidget {
   const Gyroscope({Key? key}) : super(key: key);
@@ -107,16 +108,26 @@ class _GyroscopeState extends State<Gyroscope> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: highlightColor4,
                           ),
-                          onPressed: () {
+                          onPressed: () async {
+                            Future<String> filePath =
+                                file_io.getFilePath("gyro");
+                            if (await filePath != "ERROR") {
+                              file_io.writeHeader(await filePath, "gyro");
+                            } else {
+                              // ignore: avoid_print
+                              print("ERROR: Invalid File");
+                            }
                             _streamSubscriptions.add(
                               gyroscopeEvents.listen(
-                                (GyroscopeEvent event) {
+                                (GyroscopeEvent event) async {
                                   _gyroscopeData.add(
                                     GyroscopeData(
                                       DateTime.now(),
                                       <double>[event.x, event.y, event.z],
                                     ),
                                   );
+                                  file_io.writeGyroDataLine(await filePath,
+                                      DateTime.now(), _gyroscopeValues);
                                 },
                               ),
                             );

@@ -5,6 +5,7 @@ import 'package:evolabs/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:sensors_plus/sensors_plus.dart';
+import 'package:evolabs/utils/file_io.dart' as file_io;
 
 class Accelerometer extends StatefulWidget {
   const Accelerometer({Key? key}) : super(key: key);
@@ -109,16 +110,26 @@ class _AccelerometerState extends State<Accelerometer> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: highlightColor4,
                           ),
-                          onPressed: () {
+                          onPressed: () async {
+                            Future<String> filePath =
+                                file_io.getFilePath("accel");
+                            if (await filePath != "ERROR") {
+                              file_io.writeHeader(await filePath, "accel");
+                            } else {
+                              // ignore: avoid_print
+                              print("ERROR: Invalid File");
+                            }
                             _streamSubscriptions.add(
                               accelerometerEvents.listen(
-                                (AccelerometerEvent event) {
+                                (AccelerometerEvent event) async {
                                   _accelerometerData.add(
                                     AccelerometerData(
                                       DateTime.now(),
                                       <double>[event.x, event.y, event.z],
                                     ),
                                   );
+                                  file_io.writeAccelDataLine(await filePath,
+                                      DateTime.now(), _userAccelerometerValues);
                                 },
                               ),
                             );
