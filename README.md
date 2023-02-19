@@ -1,12 +1,14 @@
 # CSC4562-Project1
 
+> **Important:** Only collect training data by pressing the green button in the navbar. Thank you.
+
 ## CSV File format:
 - `#` denotes a comment. Parser ignores the rest of the line.
 - `,` seperates values. Hence "Comma Seperated Value (CSV)"
 - `\n` (newline) seperates records. E.g. all values taken at a moment in time are stored on a single line.
 
 ### Order of values
-All lines produced by the app follow this specific record order.
+Training data produced by the app follow this specific record order.
 ```
 Timestamp,MostRecentKeypress,AccelerometerXvalue,AccelerometerYvalue,AccelerometerZvalue,GyroscopeXvalue,GyroscopeYvalue,GyroscopeZvalue [NEWLINE]
 ```
@@ -20,6 +22,7 @@ Timestamp,MostRecentKeypress,AccelerometerXvalue,AccelerometerYvalue,Acceleromet
 
 ## CSV Types:
 1. `[Timestamp].csv` - Default type. **ONLY USE THIS FOR OUR EXPERIMENTS**. Contains Accelerometer, Gyroscope, and Keypress data, if any, or all `none`s if not.
-2. `[Timestamp]-accel.csv` - Contains Accelerometer data with timestamps.
-3. `[Timestamp]-gyro.csv` - Contains Gyroscope data with timestamps.
-4. `[Timestamp]-keyboard.csv` - Contains keyboard events with timestamps. Note that this only writes a line to the CSV when there is a keyboard event, unlike the default CSV type which logs the keypress only once and `none` otherwise.
+2. `[Timestamp]-motion.csv` - Similar to the default `[Timestamp].csv`, but *does not* log keypresses.
+3. `[Timestamp]-accel.csv` - Contains Accelerometer data with timestamps.
+4. `[Timestamp]-gyro.csv` - Contains Gyroscope data with timestamps.
+5. `[Timestamp]-keyboard.csv` - Contains keyboard events with timestamps. Note that this only writes a line to the CSV when there is a keyboard event, unlike the default CSV type which logs the keypress only once and `none` otherwise.
