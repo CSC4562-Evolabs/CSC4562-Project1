@@ -22,6 +22,12 @@ Future<String> getFilePath(String dataType) async {
               "${DateFormat("yyyy-MM-dd-hh-mm-ss").format(DateTime.now())}.csv";
           break;
         }
+      case "motion":
+        {
+          filename =
+              "${DateFormat("yyyy-MM-dd-hh-mm-ss").format(DateTime.now())}-motion.csv";
+          break;
+        }
       case "accel":
         {
           filename =
@@ -58,6 +64,13 @@ void writeHeader(String? savePath, String dataType) {
             mode: FileMode.append);
         break;
       }
+    case "motion":
+      {
+        file.writeAsStringSync(
+            "# Timestamp,AccelerometerXvalue,AccelerometerYvalue,AccelerometerZvalue,GyroscopeXvalue,GyroscopeYvalue,GyroscopeZvalue [NEWLINE]\n",
+            mode: FileMode.append);
+        break;
+      }
     case "accel":
       {
         file.writeAsStringSync(
@@ -91,6 +104,16 @@ void writeTrainingDataLine(
   if (gyroscopeValues != null && accelerometerValues != null) {
     file.writeAsStringSync(
         "$date,$mostRecentKeypress,${accelerometerValues[0]},${accelerometerValues[1]},${accelerometerValues[2]},${gyroscopeValues[0]},${gyroscopeValues[1]},${gyroscopeValues[2]}\n",
+        mode: FileMode.append);
+  }
+}
+
+void writeMotionDataLine(String savePath, DateTime date,
+    List<double>? gyroscopeValues, List<double>? accelerometerValues) {
+  final file = File(savePath);
+  if (gyroscopeValues != null && accelerometerValues != null) {
+    file.writeAsStringSync(
+        "$date,${accelerometerValues[0]},${accelerometerValues[1]},${accelerometerValues[2]},${gyroscopeValues[0]},${gyroscopeValues[1]},${gyroscopeValues[2]}\n",
         mode: FileMode.append);
   }
 }

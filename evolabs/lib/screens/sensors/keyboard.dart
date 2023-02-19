@@ -106,7 +106,7 @@ class _KeyboardState extends State<Keyboard> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(top: 20, right: 20),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(30),
               child: SizedBox(

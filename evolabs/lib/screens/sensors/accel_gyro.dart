@@ -143,9 +143,9 @@ class _AccelGyroState extends State<AccelGyro> {
                           ),
                           onPressed: () async {
                             Future<String> filePath =
-                                file_io.getFilePath("training");
+                                file_io.getFilePath("motion");
                             if (await filePath != "ERROR") {
-                              file_io.writeHeader(await filePath, "training");
+                              file_io.writeHeader(await filePath, "motion");
                             } else {
                               // ignore: avoid_print
                               print("ERROR: Invalid File");
@@ -171,8 +171,7 @@ class _AccelGyroState extends State<AccelGyro> {
                                       <double>[event.x, event.y, event.z],
                                     ),
                                   );
-                                  file_io.writeTrainingDataLine(
-                                      "none",
+                                  file_io.writeMotionDataLine(
                                       await filePath,
                                       DateTime.now(),
                                       _gyroscopeValues,
