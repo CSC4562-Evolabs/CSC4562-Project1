@@ -22,6 +22,7 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
   final List<AccelerometerData> _accelerometerData = [];
   final List<GyroscopeData> _gyroscopeData = [];
   String mostRecentKeypress = "none";
+  int keypressEventBuffer = 0;
   int previousTextBufferSize = 0;
 
   @override
@@ -142,6 +143,7 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
                     mostRecentKeypress = "backspace";
                   }
                   previousTextBufferSize = value.length;
+                  keypressEventBuffer = 20;
                 },
                 decoration: const InputDecoration(
                   labelText: 'Start typing numbers here.',
@@ -210,7 +212,12 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
                                       DateTime.now(),
                                       _gyroscopeValues,
                                       _userAccelerometerValues);
-                                  mostRecentKeypress = "none";
+                                  if (keypressEventBuffer > 0) {
+                                    keypressEventBuffer--;
+                                    if (keypressEventBuffer <= 0) {
+                                      mostRecentKeypress = "none";
+                                    }
+                                  }
                                 },
                               ),
                             );
