@@ -97,13 +97,13 @@ void writeHeader(String? savePath, String dataType) {
 void writeTrainingDataLine(
     String mostRecentKeypress,
     String savePath,
-    DateTime date,
+    String deltaTime,
     List<double>? gyroscopeValues,
     List<double>? accelerometerValues) {
   final file = File(savePath);
   if (gyroscopeValues != null && accelerometerValues != null) {
     file.writeAsStringSync(
-        "$date,$mostRecentKeypress,${accelerometerValues[0]},${accelerometerValues[1]},${accelerometerValues[2]},${gyroscopeValues[0]},${gyroscopeValues[1]},${gyroscopeValues[2]}\n",
+        "$deltaTime,$mostRecentKeypress,${accelerometerValues[0]},${accelerometerValues[1]},${accelerometerValues[2]},${gyroscopeValues[0]},${gyroscopeValues[1]},${gyroscopeValues[2]}\n",
         mode: FileMode.append);
   }
 }

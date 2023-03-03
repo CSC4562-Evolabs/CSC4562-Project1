@@ -21,6 +21,8 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
   final List<AccelerometerData> _accelerometerData = [];
   final List<GyroscopeData> _gyroscopeData = [];
+  DateTime currentDateTime = DateTime.now();
+  DateTime previousDateTime = DateTime.now();
   String mostRecentKeypress = "none";
   int keypressEventBuffer = 0;
   int previousTextBufferSize = 0;
@@ -206,12 +208,14 @@ class _AnalyzeSensorsState extends State<AnalyzeSensors> {
                                       <double>[event.x, event.y, event.z],
                                     ),
                                   );
+                                  currentDateTime = DateTime.now();
                                   file_io.writeTrainingDataLine(
                                       mostRecentKeypress,
                                       await filePath,
-                                      DateTime.now(),
+                                      "${(((currentDateTime.hour - previousDateTime.hour) * 3.6e+9 + (currentDateTime.minute - previousDateTime.minute) * 6e+7 + (currentDateTime.second - currentDateTime.second) * 1e+6) - (currentDateTime.microsecond - previousDateTime.microsecond))}",
                                       _gyroscopeValues,
                                       _userAccelerometerValues);
+                                  previousDateTime = currentDateTime;
                                   if (keypressEventBuffer > 0) {
                                     keypressEventBuffer--;
                                     if (keypressEventBuffer <= 0) {
