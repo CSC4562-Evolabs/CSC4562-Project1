@@ -10,8 +10,10 @@
 ### Order of values
 Training data produced by the app follow this specific record order.
 ```
-Timestamp,MostRecentKeypress,AccelerometerXvalue,AccelerometerYvalue,AccelerometerZvalue,GyroscopeXvalue,GyroscopeYvalue,GyroscopeZvalue [NEWLINE]
+DeltaTime,MostRecentKeypress,AccelerometerXvalue,AccelerometerYvalue,AccelerometerZvalue,GyroscopeXvalue,GyroscopeYvalue,GyroscopeZvalue [NEWLINE]
 ```
+- The DeltaTime is in microseconds
+
 #### Special strings in the MostRecentKeypress field:
 - `none`: No key recently pressed, e.g. the last keypress has already been logged
 - `backspace`: a backspace character
