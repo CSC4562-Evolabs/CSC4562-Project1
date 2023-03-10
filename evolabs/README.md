@@ -1,16 +1,10 @@
 # evolabs
 
-A new Flutter project.
+This is the root directory for our data collection app, which we've dubbed evolabs.
 
-## Getting Started
+**Important note**: flutter apps are *notoriously* picky about the environment in which they are built. You can run `flutter build apk` in *this* directory (evolabs) to build an apk which you can install to a developer options and usb debugging enabled Android phone with `adb install path/to/your.apk`. 
 
-This project is a starting point for a Flutter application.
+Should you have issues building the code locally you can get an auto-built version of the from the [releases](https://github.com/CSC4562-Evolabs/CSC4562-Project1/releases) page on this repository. These are automatically built using GitHub Actions, and I (Sam Hildebrand) set that up specifically because it can be tedious to setup to build flutter code on a local machine. You can see the GitHub actions script that builds these releases [here](https://github.com/CSC4562-Evolabs/CSC4562-Project1/blob/main/.github/workflows/automated-release.yml)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Note:
+Should you have **any** problems building or installing the app, please do not hesitate to contact me, Sam Hildebrand, at my lsu.edu email address, which is listed with this link in the project report. Thank you!
